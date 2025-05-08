@@ -149,10 +149,11 @@
   <div class="hero-foot is-hidden-mobile">
     <nav class="tabs is-boxed is-fullwidth is-size-5">
       <ul>
-        <li><a href="#drp">DRP Overview</a></li>
         <li><a href="#highlight">Performance Highlights</a></li>
+        <li><a href="#drp">Method</a></li>
         <li><a href="#sim">Simulation Results</a></li>
         <li><a href="#real">Real World Results</a></li>
+        <li><a href="#app">Applications</a></li>
         <li><a href="#bench">DRPBench Details</a></li>
       </ul>
     </nav>
@@ -222,7 +223,7 @@
   </div>
 </section> -->
 
-<section class="section" id="drp">
+<section class="section">
   <div class="container">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -245,42 +246,9 @@
       </div>
     </div>
   </div>
-  <!-- <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h1 class="title is-2" style="text-align: center; padding-bottom: 10px;">Deep Reactive Policy</h1>
-
-        <div class="columns is-centered has-text-centered">
-        <div class="column is-two-thirds ">
-        <div class="content has-text-justified">
-        </div>
-      </div>
-    </div>
-        <div class="columns is-centered">
-          <div class="column is-four-fifths" style="text-align: center;">
-            <img src="./static/images/drp-system.png" alt="Image description" width="100%">
-            <br>
-            <br>
-            <div class="columns is-centered">
-              <div class="column">
-                <div class="content has-text-justified">
-                  <p>
-                    Deep Reactive Policy (DRP) is a visuo-motor neural motion policy designed for dynamic, real-world environments. First, the locally reactive DCP-RMP module adjusts joint goals to handle fast-moving dynamic obstacles in the local scene. 
-                    Then, IMPACT, a transformer-based closed-loop motion planning policy, takes as input the scene point cloud, the modified joint goal, and the current robot joint position to output action sequences for real-time execution on the robot.
-                  </p>
-                </div>
-              </div>
-            </div>
-          <br>
-            
-          </div>
-        </div> -->
-<!-- </section>
-
-<section class="section" id="highlight"> -->
   <br>
   <br>
-  <div class="container">
+  <div class="container" id="highlight">
     <div class="columns is-centered">
       <div class="column is-full-width">
             <h3 class="title is-2" style="text-align: center; padding-bottom: 10px;"><strong>Performance Highlights</strong></h3>
@@ -314,31 +282,38 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
+<section>
+  <div class="container" id="drp">
     <div class="columns is-centered">
       <div class="column is-full-width">
-            <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>DRP can be seamlessly integrated into standard manipulation pipelines</strong></h3>
-            <div class="columns">
+        <br>
+        <h1 class="title is-2" style="text-align: center; padding-bottom: 10px;">Deep Reactive Policy</h1>
+
+        <div class="columns is-centered">
+          <div class="column is-four-fifths" style="text-align: center;">
+            <img src="./static/images/drp-system.png" alt="Image description" width="100%">
+            <br>
+            <br>
+            <div class="columns is-centered">
               <div class="column">
-                <video class="center" playsinline autoplay loop controls muted src="./static/videos/integration/pick_place.mp4" width="100%" style="border-radius:10px;"></video>
-                <p style="text-align: center; font-size: 18px">DRP+SAM+AnyGrasp</p>
-              </div>
-              <div class="column">
-                <video class="center" playsinline autoplay loop controls muted src="./static/videos/big_shelf compressed.mp4" width="100%" style="border-radius:10px;"></video>
-                <p style="text-align: center; font-size: 18px">DRP+Teleoperation</p>
+                <div class="content has-text-justified">
+                  <p>
+                    Deep Reactive Policy (DRP) is a visuo-motor neural motion policy designed for dynamic, real-world environments. First, the locally reactive DCP-RMP module adjusts joint goals to handle fast-moving dynamic obstacles in the local scene. 
+                    Then, IMPACT, a transformer-based closed-loop motion planning policy, takes as input the scene point cloud, the modified joint goal, and the current robot joint position to output action sequences for real-time execution on the robot.
+                  </p>
+                </div>
               </div>
             </div>
-      </div>
-    </div>
-  </div>
+          <br>
+          </div>
+        </div>
 </section>
 
 <section class="section" id="sim">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-full-width">
-            <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>DRP on DRPBench (TODO: more descriptive, what is DRPBench etc. etc.)</strong></h3>
+            <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Simulation Results</strong></h3>
             <div class="columns">
               <div class="column">
                 <video class="center" playsinline autoplay loop controls muted src="./static/videos/big_shelf compressed.mp4" width="100%" style="border-radius:10px;"></video>
@@ -372,7 +347,7 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-full-width">
-            <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>DRP achieves high success rates on real-world motion planning tasks<br>across unseen static and dynamic scenarios</strong></h3>
+            <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;">Real World Results</h3>
             <hr/>
             <h3 class="title is-4" style="text-align: center; padding-top: 15px;"><strong>DRP on Static Environments</strong></h3>
             <div class="columns">
@@ -412,25 +387,25 @@
             <div class="columns">
               <div class="column">
                 <video class="center" playsinline autoplay loop controls muted src="./static/videos/rweval/sao/SAO_DRP_Shelf_yellowboard.mp4" width="100%" style="border-radius:10px;"></video>
-                <p style="text-align: center; font-size: 18px">Cluttered &mdash; Large Blocker: 100%</p>
+                <p style="text-align: center; font-size: 18px">Cluttered &mdash; Large Blocker</p>
               </div>
               <div class="column">
                 <video class="center" playsinline autoplay loop controls muted src="./static/videos/rweval/sao/SAO_DRP_Shelf_woodenboard.mp4" width="100%" style="border-radius:10px;"></video>
-                <p style="text-align: center; font-size: 18px">Cluttered &mdash; Small Blocker: 100%</p>
+                <p style="text-align: center; font-size: 18px">Cluttered &mdash; Small Blocker</p>
               </div>
             </div>
             <div class="columns">
               <div class="column">
                 <video class="center" playsinline autoplay loop controls muted src="./static/videos/rweval/sao/SAO_DRP_Tabletop_blackboard.mp4" width="100%" style="border-radius:10px;"></video>
-                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Large Blocker: 100%</p>
+                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Large Blocker</p>
               </div>
               <div class="column">
                 <video class="center" playsinline autoplay loop controls muted src="./static/videos/rweval/sao/SAO_DRP_Tabletop_yellowboard.mp4" width="100%" style="border-radius:10px;"></video>
-                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Medium Blocker: 100%</p>
+                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Medium Blocker</p>
               </div>
               <div class="column">
                 <video class="center" playsinline autoplay loop controls muted src="./static/videos/rweval/sao/SAO_DRP_Tabletop_pan.mp4" width="100%" style="border-radius:10px;"></video>
-                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Small Blocker: 100%</p>
+                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Small Blocker</p>
               </div>
             </div>
 
@@ -440,25 +415,25 @@
             <div class="columns">
               <div class="column">
                 <video class="center" playsinline autoplay loop controls muted src="./static/videos/rweval/gb/GB_DRP_Shelf_yellowboard.mp4" width="100%" style="border-radius:10px;"></video>
-                <p style="text-align: center; font-size: 18px">Cluttered &mdash; Large Blocker: 100%</p>
+                <p style="text-align: center; font-size: 18px">Cluttered &mdash; Large Blocker</p>
               </div>
               <div class="column">
                 <video class="center" playsinline autoplay loop controls muted src="./static/videos/rweval/gb/GB_DRP_Shelf_pan.mp4" width="100%" style="border-radius:10px;"></video>
-                <p style="text-align: center; font-size: 18px">Cluttered &mdash; Small Blocker: 100%</p>
+                <p style="text-align: center; font-size: 18px">Cluttered &mdash; Small Blocker</p>
               </div>
             </div>
             <div class="columns">
               <div class="column">
                 <video class="center" playsinline autoplay loop controls muted src="./static/videos/rweval/gb/GB_DRP_Tabletop_large.mp4" width="100%" style="border-radius:10px;"></video>
-                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Large Blocker: 100%</p>
+                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Large Blocker</p>
               </div>
               <div class="column">
                 <video class="center" playsinline autoplay loop controls muted src="./static/videos/rweval/gb/GB_DRP_Tabletop_medium.mp4" width="100%" style="border-radius:10px;"></video>
-                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Medium Blocker: 100%</p>
+                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Medium Blocker</p>
               </div>
               <div class="column">
                 <video class="center" playsinline autoplay loop controls muted src="./static/videos/rweval/gb/GB_DRP_Tabletop_small.mp4" width="100%" style="border-radius:10px;"></video>
-                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Small Blocker: 75%</p>
+                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Small Blocker</p>
               </div>
             </div>
             <!-- <p style="text-align: center; font-size: 18px">caption here</p> -->
@@ -467,25 +442,25 @@
             <div class="columns">
               <div class="column">
                 <video class="center" playsinline autoplay loop controls muted src="./static/videos/rweval/dgb/dgb_drp_shelf_side.mp4" width="100%" style="border-radius:10px;"></video>
-                <p style="text-align: center; font-size: 18px">Cluttered &mdash; Side Blocker: 100%</p>
+                <p style="text-align: center; font-size: 18px">Cluttered &mdash; Side Blocker</p>
               </div>
               <div class="column">
                 <video class="center" playsinline autoplay loop controls muted src="./static/videos/rweval/dgb/dgb_drp_shelf_front.mp4" width="100%" style="border-radius:10px;"></video>
-                <p style="text-align: center; font-size: 18px">Cluttered &mdash; Front Blocker: 100%</p>
+                <p style="text-align: center; font-size: 18px">Cluttered &mdash; Front Blocker</p>
               </div>
             </div>
             <div class="columns">
               <div class="column">
                 <video class="center" playsinline autoplay loop controls muted src="./static/videos/rweval/dgb/dgb_drp_large.mp4" width="100%" style="border-radius:10px;"></video>
-                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Large Blocker: 75%</p>
+                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Large Blocker</p>
               </div>
               <div class="column">
                 <video class="center" playsinline autoplay loop controls muted src="./static/videos/rweval/dgb/dgb_drp_medium.mp4" width="100%" style="border-radius:10px;"></video>
-                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Medium Blocker: 100%</p>
+                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Medium Blocker</p>
               </div>
               <div class="column">
                 <video class="center" playsinline autoplay loop controls muted src="./static/videos/rweval/dgb/dgb_drp_small.mp4" width="100%" style="border-radius:10px;"></video>
-                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Small Blocker: 100%</p>
+                <p style="text-align: center; font-size: 18px">Tabletop &mdash; Small Blocker</p>
               </div>
             </div>
             <!-- <p style="text-align: center; font-size: 18px">caption here</p> -->
@@ -498,7 +473,7 @@
                        src="./static/videos/rweval/fdo/floating_drp.mp4" 
                        style="width: 100%; height: auto; border-radius: 10px;"></video>
               </div>
-<!-- asdf -->
+
               <!-- Divider -->
               <!-- <div style="
                 width: 4px;
@@ -547,6 +522,26 @@
             </p>
             <!-- <hr/> -->
 
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="app">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+            <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>DRP can be seamlessly integrated into standard manipulation pipelines</strong></h3>
+            <div class="columns">
+              <div class="column">
+                <video class="center" playsinline autoplay loop controls muted src="./static/videos/integration/pick_place.mp4" width="100%" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">DRP+SAM+AnyGrasp</p>
+              </div>
+              <div class="column">
+                <video class="center" playsinline autoplay loop controls muted src="./static/videos/big_shelf compressed.mp4" width="100%" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">DRP+Teleoperation</p>
+              </div>
+            </div>
       </div>
     </div>
   </div>
