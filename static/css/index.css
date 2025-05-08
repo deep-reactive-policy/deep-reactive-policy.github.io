@@ -179,3 +179,20 @@ transition: opacity 1.0s;
   z-index: 2; /* Ensure text is above the overlay */
   transition: opacity 1.0s;
 }
+
+
+/* Hide Mobile Version by Default */
+.results-mobile {
+  display: none;
+}
+
+/* Hide Desktop Version and Show Mobile Version on Small Screens */
+@media screen and (max-width: 768px) {
+  .results-desktop {
+    display: none;
+  }
+
+  .results-mobile {
+    display: block;
+  }
+}
