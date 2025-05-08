@@ -37,6 +37,23 @@
         rgba(0, 0, 0, 0)
       );
     }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 24px;
+      font-size: 16px;
+      font-family: sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.2s, box-shadow 0.2s;
+    }
+    button:hover {
+      background-color: #eaeaea;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
   </style>
 </head>
 
@@ -150,11 +167,11 @@
     <nav class="tabs is-boxed is-fullwidth is-size-5">
       <ul>
         <li><a href="#highlight">Performance Highlights</a></li>
-        <li><a href="#drp">Method</a></li>
+        <li><a href="#drp">Method Overview</a></li>
         <li><a href="#sim">Simulation Results</a></li>
         <li><a href="#real">Real World Results</a></li>
-        <li><a href="#app">Applications</a></li>
-        <li><a href="#bench">DRPBench Details</a></li>
+        <!-- <li><a href="#app">Applications</a></li> -->
+        <!-- <li><a href="#bench">DRPBench Details</a></li> -->
       </ul>
     </nav>
   </div>
@@ -248,6 +265,14 @@
   </div>
   <br>
   <br>
+
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3" style="color: red;">All videos play at 1x speed</h2>
+      <br>
+    </div>
+  </div>
+
   <div class="container" id="highlight">
     <div class="columns is-centered">
       <div class="column is-full-width">
@@ -340,6 +365,33 @@
             </div>
       </div>
     </div>
+    <button onclick="toggleVideos()" id="expand-btn">Show More</button>
+    <script>
+      function toggleVideos() {
+        const extra = document.getElementById('extra-videos');
+        const btn = document.getElementById('expand-btn');
+        const isHidden = extra.style.display === 'none';
+  
+        extra.style.display = isHidden ? 'block' : 'none';
+        btn.textContent = isHidden ? 'Show Less' : 'Show More';
+      }
+    </script>
+    <div id="extra-videos" style="display: none;">
+      <hr>
+      <video src="video3.mp4" controls></video>
+      <video src="video4.mp4" controls></video>
+    </div>
+    <!-- <button onclick="toggleVideos()" id="expand-btn">Show More</button>
+    <script>
+      function toggleVideos() {
+        const extra = document.getElementById('extra-videos');
+        const btn = document.getElementById('expand-btn');
+        const isHidden = extra.style.display === 'none';
+  
+        extra.style.display = isHidden ? 'block' : 'none';
+        btn.textContent = isHidden ? 'Show Less' : 'Show More';
+      }
+    </script> -->
   </div>
 </section>
 
@@ -378,8 +430,8 @@
                 <p style="text-align: center; font-size: 18px">Kitchen Shelf</p>
               </div>
             </div>
-            <div class="column">
-              <p style="text-align: center; font-size: 20px">DRP: 90% | Neural MP: x% | cuRobo: x%</p>
+            <div class="column" style="padding-top: 0px; padding-bottom: 30px">
+              <p style="text-align: center; font-size: 20px">Success Rate: <strong>DRP 90%</strong> | NeuralMP x% | cuRobo x%</p>
             </div>
 
 
@@ -547,15 +599,29 @@
   </div>
 </section>
 
-<!-- <section class="section" id="video">
-  <div class="container is-max-desktop">
-    <h2 class="title is-1 has-text-centered is-size-4-mobile">Teaser Video</h2>
-    <iframe width="100%" style="aspect-ratio: 16 / 9;" src="" title="DRP Teaser Video"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<section class="section" id="app">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+            <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Failure Cases</strong></h3>
+            <div class="columns">
+              <div class="column">
+                <video class="center" playsinline autoplay loop controls muted src="./static/videos/failurecase/static.mp4" width="100%" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Unseen obstacle geometry outside training distribution</p>
+              </div>
+              <div class="column">
+                <video class="center" playsinline autoplay loop controls muted src="./static/videos/failurecase/gb.mp4" width="100%" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Point cloud offers limited visibility of small goal-blocking objects</p>
+              </div>
+              <div class="column">
+                <video class="center" playsinline autoplay loop controls muted src="./static/videos/failurecase/dgb.mp4" width="100%" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Reduced performance against large, fast-moving obstacles</p>
+              </div>
+            </div>
+      </div>
+    </div>
   </div>
-</section> -->
+</section>
 
 <footer class="footer">
   <div class="container">
